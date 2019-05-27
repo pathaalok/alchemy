@@ -1,0 +1,59 @@
+.side-panel{
+    background-color: #1f4365;
+    position:relative;
+}
+
+.home-page{
+    height: 100vh;
+}
+
+.content-panel{
+    margin:auto;
+}
+
+.btn-primary{
+    background-color: #1f4365 !important;
+}
+
+.carousel-content{
+ position: absolute;
+ bottom: 30px;   
+ color: white;
+}
+
+.logo{
+    width: 175px;
+    height: 175px;
+}
+
+.logo-div{
+    position: relative;
+    top: 15%;
+}
+
+.carousel-heading{
+    margin-bottom: 20px;
+    border-bottom: 1px solid orange !important;
+}
+
+@media only screen and (max-width:767px) {
+
+    .logo{
+        width: 125px;
+        height: 125px;
+    }
+
+    .logo-div{
+        position: relative;
+        top: 10%;
+    }
+
+    .carousel-content{
+        position: relative;
+        color: white;
+        bottom: -30px;   
+       }
+  }
+
+
+

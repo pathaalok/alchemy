@@ -1,0 +1,152 @@
+
+  <div class="col-md-8 offset-md-2 text-center">
+
+      <p  class="heading"> <strong>Create Your Account </strong> </p>
+  
+
+      <form #myform="ngForm" (ngSubmit)="register(myform)" ngNativeValidate>
+          <div class="row">
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">FirstName</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
+                      </div>
+                      <input type="text" name="firstName" [(ngModel)]="registrationModel.firstName" class="form-control" id="inlineFormInputGroup" required placeholder="FirstName">
+                    </div>
+        
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">LastName</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></div>
+                      </div>
+                      <input type="text" name="lastName" [(ngModel)]="registrationModel.lastName"  class="form-control" id="inlineFormInputGroup" required placeholder="LastName">
+                    </div>
+        
+                </div>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">PostCode</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                      </div>
+                      <input type="text" name="postcode" [(ngModel)]="registrationModel.postcode" class="form-control" id="inlineFormInputGroup" required placeholder="PostCode">
+                    </div>
+        
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">D.O.B</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-asterisk" aria-hidden="true"></i></div>
+                      </div>
+                      <input type="date" name="dob" [(ngModel)]="registrationModel.dob" class="form-control" id="inlineFormInputGroup" required placeholder="D.O.B">
+                    </div>
+        
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">Door No</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                      </div>
+                      <input type="text" name="doorNo" [(ngModel)]="registrationModel.doorNo" class="form-control" id="inlineFormInputGroup" required placeholder="Door No">
+                    </div>
+        
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">Address</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                      </div>
+                      <input type="text" name="address" [(ngModel)]="registrationModel.address" class="form-control" id="inlineFormInputGroup" required placeholder="Address">
+                    </div>
+        
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-asterisk" aria-hidden="true"></i></div>
+                      </div>
+                      <input type="email" name="email" [(ngModel)]="registrationModel.email" class="form-control" id="inlineFormInputGroup" required placeholder="Username">
+                    </div>
+        
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">Password</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-asterisk" aria-hidden="true"></i></div>
+                      </div>
+                      <input  type="password" name="password" [(ngModel)]="registrationModel.password" class="form-control" id="inlineFormInputGroup" required placeholder="Password">
+                    </div>
+        
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="form-group">
+          
+                    <label class="sr-only" for="inlineFormInputGroup">Activities,Education</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                      </div>
+                      <input  type="text" name="activities" [(ngModel)]="registrationModel.activities" class="form-control" id="inlineFormInputGroup" required placeholder="Activities,Education">
+                    </div>
+        
+                </div>
+            </div>
+            <div class="col">
+                
+            </div>
+          </div>
+
+          <button type="submit" style="background-color: #1f4365" class="btn btn-primary btn-lg btn-block">Register</button>
+      
+  
+        </form>
+
+      <div class="col-xs-12">
+          <p>Already have an Account? <a class="anchor"  (click)="navigate('/home/user/login')">Sign In!</a></p>
+      </div>
+    </div>
+  
+  
+  

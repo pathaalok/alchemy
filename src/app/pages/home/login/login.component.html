@@ -2,7 +2,7 @@
   <div class="col-md-5 offset-md-4 text-center">
 
     <p class="heading"> <strong>Login To Application </strong> </p>
-
+    
 
     <form  #myform="ngForm" (ngSubmit)="login(myform)" ngNativeValidate>
         <div class="form-group">
@@ -12,7 +12,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
               </div>
-              <input type="email" name="email" [(ngModel)]="loginModel.email" class="form-control" id="inlineFormInputGroup" required placeholder="Email">
+              <input type="email" name="email" [(ngModel)]="loginModel.userName" class="form-control" id="inlineFormInputGroup" required placeholder="Email">
             </div>
 
         </div>
@@ -45,7 +45,7 @@
      
     <div class="col-xs-12 text-left no-access">
         <p><a href="#">Forgot Password ?</a></p>
-        <p>Don't you have an Account? <a class="anchor" (click)="navigate('/home/user/registration')">Sign Up!</a></p>
+        <!-- <p>Don't you have an Account? <a class="anchor" (click)="navigate('/home/user/registration')">Sign Up!</a></p> -->
     </div>
 
 

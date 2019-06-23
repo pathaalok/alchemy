@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { RegistrationService } from './registration.service';
+import { NewCustomerService } from './new-customer.service';
 import { of } from "rxjs";
 
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  selector: 'app-new-customer',
+  templateUrl: './new-customer.component.html',
+  styleUrls: ['./new-customer.component.scss']
 })
-export class RegistrationComponent implements OnInit {
+export class NewCustomerComponent implements OnInit {
 
-  constructor(private registrationService: RegistrationService,private router:Router,
+  constructor(private newCustomerService: NewCustomerService,private router:Router,
     private activatedRoute: ActivatedRoute,private ngxUiLoaderService: NgxUiLoaderService) { }
 
   public registrationModel:any = {
@@ -38,7 +38,7 @@ export class RegistrationComponent implements OnInit {
   register(){
     this.ngxUiLoaderService.startLoader("master");
     this.registrationModel.userName = this.registrationModel.email;
-    this.registrationService.registration(this.registrationModel).subscribe(jsonStr =>{
+    this.newCustomerService.registration(this.registrationModel).subscribe(jsonStr =>{
       this.ngxUiLoaderService.stopLoader("master");
       this.navigate("/dashboard");
     }, error => this.handleError<string>(error, "Network Error!"));

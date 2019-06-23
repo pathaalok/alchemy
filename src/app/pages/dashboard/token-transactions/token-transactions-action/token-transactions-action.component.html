@@ -1,0 +1,38 @@
+<div class="col-xs-12">
+
+        <span class="fa fa-2x fa-eye" (click)="success(content)">  </span>
+</div>
+
+<ng-template #content let-modal>
+        <div class="modal-header" style="
+        background: #1f4365;
+    ">
+          
+          <button type="button" class="close" aria-label="Close" style="
+          color: white !important;
+      " (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                <table class="table table-striped">
+                        <thead>
+                        <tr>
+                          <th scope="col">Token Redeemed (Details)</th>
+                          <th scope="col">Service</th>
+                          <th scope="col">Supplier</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr >
+                          <td>100</td>
+                          <td>Yoga</td>
+                          <td>ABC</td>
+                        </tr>
+                        </tbody>
+                      </table>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+        </div>
+      </ng-template>

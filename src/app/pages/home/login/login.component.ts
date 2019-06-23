@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from './login.service';
 import { of } from "rxjs";
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import {GridOptions} from "ag-grid-community";
 
 @Component({
   selector: 'app-login',
@@ -15,17 +16,21 @@ export class LoginComponent implements OnInit {
     private activatedRoute: ActivatedRoute,private ngxUiLoaderService: NgxUiLoaderService) { }
 
   public loginModel:any = {
-    "email":"",
+    "userName":"",
     "password":"",
     "rememberMe":false
-  }
-  private rememberMeLabel='rememberMeLabel'
+  };
+  private rememberMeLabel='rememberMeLabel';
+
+  
 
   ngOnInit() {
     var storageValue = localStorage.getItem(this.rememberMeLabel)
     if(storageValue){
       this.loginModel = JSON.parse(storageValue);
     }
+   
+
   }
 
   navigate(url){

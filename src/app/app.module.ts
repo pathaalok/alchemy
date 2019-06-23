@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION,
   PB_DIRECTION, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 
+  import { ToastrModule } from 'ngx-toastr';
+  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
   const ngxUiLoaderConfig: NgxUiLoaderConfig ={
     "bgsColor": "#00ACC1",
@@ -44,7 +47,9 @@ import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION,
     AppRoutingModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule, // import this module for showing loader automatically when navigating between app routes
-    NgxUiLoaderHttpModule,
+    NgxUiLoaderHttpModule,BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

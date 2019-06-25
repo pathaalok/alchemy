@@ -1,4 +1,32 @@
 
+/deep/ .ag-theme-blue .ag-root {
+    border: 1px solid #1f4365;
+}
+
+
+/deep/ .ag-theme-blue .ag-header-cell, .ag-theme-blue .ag-header-group-cell {
+    border-style: solid;
+    border-color: #1f4365;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-width: 0;
+}
+
+/deep/ .ag-theme-blue .ag-header-cell {
+    border-right: 1px solid #1f4365;
+}
+
+/deep/ .ag-theme-blue .ag-header {
+    background-color: #1f4365;
+    border-bottom: 1px solid #1f4365;
+}
+
+/deep/ .ag-theme-blue .ag-ltr .ag-cell {
+    border-right: 1px dotted #1f4365;
+}
+ 
+
+
  :root {
     --blue: #1f4365;
     --indigo: #6610f2;
@@ -37,16 +65,7 @@
     box-sizing: border-box;
   }
   
-  html {
-    font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-  
-  article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block;
-  }
+ 
   
   body {
     margin: 0;
@@ -59,9 +78,6 @@
     background-color: #fff;
   }
   
-  [tabindex="-1"]:focus {
-    outline: 0 !important;
-  }
   
   hr {
     -webkit-box-sizing: content-box;

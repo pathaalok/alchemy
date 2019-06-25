@@ -10,17 +10,14 @@ export class LoginService {
 
   constructor(private httpClient : HttpClient) { }
 
-
   public login(loginModel): Observable<any> {
-    return this.httpClient.post("../../assets/test-data/preview.html",loginModel).pipe(
-      map((res: any) => {
-        res.json()
-      }),
-      catchError(<T>(error: any, result?: T) => {
-        console.log(error);
-        return of(result as T);
-      })
-    );
+    return this.httpClient.post("http://ec2-13-233-1-50.ap-south-1.compute.amazonaws.com:8080/alchemy/login",loginModel);
   }
+
+
+  public getUserDetails(userName): Observable<any> {
+    return this.httpClient.get("http://ec2-13-233-1-50.ap-south-1.compute.amazonaws.com:8080/alchemy/users/user?userName="+userName);
+  }
+
 
 }

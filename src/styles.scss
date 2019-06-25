@@ -1,6 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~ag-grid/dist/styles/ag-grid.css";
-@import "~ag-grid/dist/styles/ag-theme-balham.css";
+
 
 @import '~ngx-toastr/toastr';
  
@@ -10,3 +8,17 @@
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~ngx-toastr/toastr-bs4-alert';
+
+
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+@import "~ag-grid-community/dist/styles/ag-theme-blue.css";
+
+@import "~ag-grid-community/dist/styles/ag-theme-fresh.css";
+
+@import "~ag-grid-community/dist/styles/ag-theme-dark.css";
+
+
+@import "~ag-grid-community/dist/styles/ag-theme-bootstrap.css";
+@import "~ag-grid-community/dist/styles/ag-theme-material.css";

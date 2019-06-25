@@ -5,6 +5,8 @@ import { of } from "rxjs";
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ToastrService } from 'ngx-toastr';
 
+import {ManageCustomersService } from '../manage-customers.service';
+
 @Component({
   selector: 'manage-customers-action',
   templateUrl: './manage-customers-action.component.html',
@@ -12,7 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ManageCustomersActionComponent {
 
-  constructor(private router:Router,private toastr: ToastrService,
+  constructor(private manageCustomersService: ManageCustomersService,private router:Router,private toastr: ToastrService,
     private activatedRoute: ActivatedRoute,private ngxUiLoaderService: NgxUiLoaderService) { }
 
     private params: any;
@@ -25,15 +27,37 @@ export class ManageCustomersActionComponent {
     this.router.navigateByUrl(url);
   }
 
-  success(){
-    this.toastr.success('Approved','', {
-      closeButton: true
+
+  callApi(status){
+
+      let body ={
+      "requestId": this.params.data.requestId,
+      "requestStatus": status
+      }
+
+  this.ngxUiLoaderService.startLoader("master");
+      this.manageCustomersService.updateStatusCustomer(body).subscribe(data =>{
+      this.ngxUiLoaderService.stopLoader("master");
+      if(status==='APPROVED'){
+         this.toastr.success('Approved','', {
+              closeButton: true
+            });
+      }else{
+            this.toastr.error('Rejected','',{
+          closeButton: true
+        });
+      }
+      this.params.context.componentParent.getCustomers();
+
+    }, error => {
+      this.handleError();
     });
   }
 
-  cancel(){
-    
-    this.toastr.error('Rejected','',{
+
+private handleError() {
+    this.ngxUiLoaderService.stopLoader("master");
+    this.toastr.error('Something Went Wrong.Please try again later','',{
       closeButton: true
     });
   }

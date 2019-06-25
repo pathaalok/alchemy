@@ -14,49 +14,49 @@
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="inputEmail4">NHS ID</label>
-                  <input type="text" class="form-control" id="inputEmail4" placeholder="NHS ID">
+                  <input  name="nhsId" [(ngModel)]="registrationModel.nhsId" required type="text" class="form-control" id="inputEmail4" placeholder="NHS ID">
                 </div>
               </div>
 
               <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">First Name</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="First Name">
+                    <input name="firstName" [(ngModel)]="registrationModel.firstName" required type="text" class="form-control" id="inputEmail4" placeholder="First Name">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Last Name</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name">
+                    <input  name="lastName" [(ngModel)]="registrationModel.lastName" required type="text" class="form-control" id="inputPassword4" placeholder="Last Name">
                   </div>
               </div>
 
               <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="Gender">Gender</label>
-                    <select class="form-control" id="Gender">
-                        <option>Male</option>
-                        <option>Female</option>
+                    <label for="Gender">Gender </label>
+                    <select [(ngModel)]="registrationModel.gender" name="gender" class="form-control" id="Gender">
+                        <option >Male</option>
+                        <option >Female</option>
                     </select>
 
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Email</label>
-                    <input type="email" class="form-control" id="inputPassword4" placeholder="Email">
+                    <input name="email" [(ngModel)]="registrationModel.email"  required type="email" class="form-control" id="inputPassword4" placeholder="Email">
                   </div>
               </div>
 
               <div class="form-group">
                 <label for="inputAddress">D.O.B</label>
-                <input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <input name="dob" [(ngModel)]="registrationModel.dob" required type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
               </div>
 
               <div class="form-group">
                 <label for="inputAddress2">Assign Tokens</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Assign Tokens">
+                <input name="assginTokens" [(ngModel)]="registrationModel.assignTokens"  required type="number" class="form-control" id="inputAddress2" placeholder="Assign Tokens">
               </div>
               
               <div class="col-xs-12 text-center">
                   <button type="submit" style="background-color: #1f4365" class="btn btn-primary btn-md">Submit</button>
-                  <button type="submit" style="background-color: #1f4365;margin-left: 5px;" class="btn btn-primary btn-md">Cancel</button>
+                  <button type="button" (click)="initialValues()" style="background-color: #1f4365;margin-left: 5px;" class="btn btn-primary btn-md">Cancel</button>
     
               </div>
 

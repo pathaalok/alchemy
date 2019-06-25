@@ -10,6 +10,10 @@ import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION,
   import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+    import {SharedService} from './pages/shared.service';
+
+(<any>window).sharedService = new SharedService();
+
   const ngxUiLoaderConfig: NgxUiLoaderConfig ={
     "bgsColor": "#00ACC1",
     "bgsOpacity": 0.5,

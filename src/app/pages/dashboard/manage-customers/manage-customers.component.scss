@@ -1,8 +1,9 @@
-.content-panel{
-    margin:auto;
-}
-.heading{    
-    background-color: #1f4365;
+.ag-theme-blue .ag-header {
+    background-color: #1f4365 !important;
+    background-image: none;
     color: white;
-    padding: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Helvetica Neue", sans-serif;
+    border-bottom: 1px solid #1f4365 !important;
 }

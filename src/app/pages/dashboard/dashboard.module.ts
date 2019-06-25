@@ -13,6 +13,9 @@ import { GpSearchModule } from './gp-search/gp-search.module';
 import { ManageCustomersModule } from './manage-customers/manage-customers.module';
 import { TokenTransactionsModule } from './token-transactions/token-transactions.module';
 
+
+ import {SharedService} from '../shared.service';
+
 @NgModule({
   declarations: [DashboardComponent,HeaderComponent,FooterComponent,SidebarComponent],
   imports: [
@@ -22,6 +25,7 @@ import { TokenTransactionsModule } from './token-transactions/token-transactions
     ManageCustomersModule,
     TokenTransactionsModule,
     DashboardRoutingModule
-  ]
+  ],
+  providers: [{provide: SharedService, useValue: (<any>window).sharedService}]
 })
 export class DashboardModule { }

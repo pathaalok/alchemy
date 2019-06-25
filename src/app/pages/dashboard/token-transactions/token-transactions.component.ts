@@ -8,6 +8,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import {GridOptions} from "ag-grid-community";
 import { TokenTransactionsActionComponent } from './token-transactions-action/token-transactions-action.component';
 
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'token-transactions',
@@ -17,7 +18,7 @@ import { TokenTransactionsActionComponent } from './token-transactions-action/to
 export class TokenTransactionsComponent implements OnInit {
 
   constructor(private tokenTransactionsService: TokenTransactionsService,private router:Router,
-    private activatedRoute: ActivatedRoute,private ngxUiLoaderService: NgxUiLoaderService) { }
+    private activatedRoute: ActivatedRoute,private ngxUiLoaderService: NgxUiLoaderService,private toastr: ToastrService) { }
 
     public gridOptions: GridOptions;
   
@@ -74,11 +75,30 @@ export class TokenTransactionsComponent implements OnInit {
         {customerId: "123", customerName: "ABC", generalPractitioner: "ABC", tokensAllocated: "10", tokensRedeemed: 2, tokensRemaining: 10},
         {customerId: "123", customerName: "ABC", generalPractitioner: "ABC", tokensAllocated: "10", tokensRedeemed: 3, tokensRemaining: 10},
     ]
+
+    this.getTokenTransactions();
   } 
+
+  getTokenTransactions(){
+   this.ngxUiLoaderService.startLoader("master");
+    this.tokenTransactionsService.getTokenTransactions().subscribe(data =>{
+      this.ngxUiLoaderService.stopLoader("master");
+      //this.gridOptions.rowData = data;
+    }, error => {
+      this.handleError();
+    });
+  }
+
+
 
   navigate(url){
     this.router.navigateByUrl(url);
   }
 
-
+private handleError() {
+    this.ngxUiLoaderService.stopLoader("master");
+    this.toastr.error('Something Went Wrong.Please try again later','',{
+      closeButton: true
+    });
+  }
 }
